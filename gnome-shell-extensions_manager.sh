@@ -14,7 +14,7 @@ manage_extension() {
 }
 
 # Lista de extensões a serem gerenciadas
-extensions_list="$(cat/home/arch/.local/share/gnome-shell/extensions.list)"
+extensions_list="$(cat $HOME/.local/share/gnome-shell/extensions.list)"
 
 # Iterar pela lista e verificar/ativar cada extensão
 for extension in "${extensions_list[@]}"; do
