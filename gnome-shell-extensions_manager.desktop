@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Exec="$HOME"/.local/bin/gnome-shell-extensions_manager.sh
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name=Extensions Manager
+Comment=Gerencia extensões do GNOME no login
