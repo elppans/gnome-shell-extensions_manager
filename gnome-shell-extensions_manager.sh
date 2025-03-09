@@ -3,15 +3,17 @@
 # Função para verificar e ativar extensões
 manage_extension() {
     EXTENSION=$1
-    STATUS=$(gnome-extensions list | grep "$EXTENSION" | grep "enabled")
+    STATUS=$(gnome-extensions list --enabled | grep "$EXTENSION" )
 
     if [ -z "$STATUS" ]; then
-        gnome-extensions enable "$EXTENSION"
-        echo "A extensão $EXTENSION foi ativada."
+        gnome-extensions enable "$EXTENSION" && \
+        echo "A extensão $EXTENSION foi ativada." || \
+        echo "A extensão $EXTENSION não foi ativada."
     else
         echo "A extensão $EXTENSION já está ativada."
     fi
 }
+
 
 # Verificar se o arquivo existe e contém extensões
 if [ ! -f "$HOME/.local/share/gnome-shell/extensions.list" ] || [ ! -s "$HOME/.local/share/gnome-shell/extensions.list" ]; then
