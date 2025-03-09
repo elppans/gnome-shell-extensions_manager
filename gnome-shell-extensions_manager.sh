@@ -13,10 +13,17 @@ manage_extension() {
     fi
 }
 
+# Verificar se o arquivo existe e contém extensões
+if [ ! -f "$HOME/.local/share/gnome-shell/extensions.list" ] || [ ! -s "$HOME/.local/share/gnome-shell/extensions.list" ]; then
+    echo "O arquivo extensions.list está vazio ou não existe. Por favor, verifique."
+    exit 1
+fi
+
 # Lista de extensões a serem gerenciadas
 extensions_list="$(cat $HOME/.local/share/gnome-shell/extensions.list)"
 
 # Iterar pela lista e verificar/ativar cada extensão
-for extension in "${extensions_list[@]}"; do
+while IFS= read -r extension; do
     manage_extension "$extension"
-done
+done < "$HOME/.local/share/gnome-shell/extensions.list"
+
