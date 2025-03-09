@@ -19,7 +19,7 @@ Essa ferramenta é ideal para usuários que desejam garantir que extensões esse
 ### 1. Clone este repositório
 Baixe os arquivos do repositório:
 ```bash
-git clone https://github.com/seu_usuario/gnome-shell-extensions_manager.git
+git clone https://github.com/elppans/gnome-shell-extensions_manager.git
 cd gnome-shell-extensions_manager
 ```
 
