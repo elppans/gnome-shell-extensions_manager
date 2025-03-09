@@ -15,9 +15,6 @@ manage_extension() {
 
 # Lista de extensões a serem gerenciadas
 extensions_list=(
-    "extensao@exemplo.com"
-    "outra-extensao@exemplo.com"
-    "mais-uma-extensao@exemplo.com"
 )
 
 # Iterar pela lista e verificar/ativar cada extensão
